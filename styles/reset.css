@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+* {box-sizing:border-box;}
+html,body,h1,h2,h3,h4,h5,h6,
+p,ul,ol,li,blockquote,dl,dt,dd,address,video,
+strong,em,del,sup,sub,s,q,code,img,a,
+table,tr,th,td,thead,tbody,tfoot,
+form,fieldset,legend,label,input,textarea,option,select,button,
+header,main,footer,article,section,aside,nav,figure,figcaption,
+div,span {
+    font-family:'맑은 고딕',"Font Awesome 5 Free","Font Awesome 5 Brands";
+    margin:0; padding:0;
+    font-size:1.0rem;
+    font-weight:normal;
+    font-style:normal;
+    line-height:1.0;
+    list-style:none;
+}
+a {text-decoration:none; color:#000;}
+table,tr,th,td {border-collapse:collapse;}
+button {cursor:pointer; border:none; background:none;}
+.skip {display:none;}
+.awesome::after,
+.awesome::before {font-weight:600;}
+fieldset {border:none;}
+legend {display: none;}

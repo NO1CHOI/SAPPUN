@@ -1,0 +1,117 @@
+// #ff7f50(테두리색) #222(글자색) #eee (배경색) #ffe4c4(best) #000080(주문) #aaa (글자색2)
+// 변수지정
+$border:#ff7f50;/* 테두리색 */
+$fc1:#222;/* 글자색 */
+$fc2:#aaa;/* 글자색2 */
+$background:#eee; /* 배경색 */
+$best:#ffe4c4;/* best */
+$sell:#000080;/* 주문 */
+//mixin
+@mixin flex-center {
+    display:flex;
+    flex-flow:row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+//-------------------------------------------------------------
+//skip
+// .lang, .all_nav, .sub {display:none;}
+
+#popup a {
+    display: block;
+    background-color: $background;
+    width:100%; height: 40px;
+    font-size:0.85rem; font-weight: 700;
+    text-align: center; line-height: 40px;
+}
+header {width:1200px; margin:0 auto;
+    .top {
+        h1 {padding-top:30px;
+            a {margin:0 auto; 
+                width:150px;
+                display:block;
+                img {width: 100%;}
+            }//e:h1-a
+        }//e:h1
+        .right {
+            // background: lightblue;
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content: right;
+            align-items: center;
+            position:relative;
+            li:first-child {position:relative;
+                > a::after{
+                content: ''; display: inline-block;
+                background: teal url(../image/arr.png) no-repeat;
+                width:10px;height: 10px;margin-left: 7px;
+                }
+            }
+            .lang {display:block;
+                // background: yellow;
+                padding:5px;
+                position:absolute;
+                left:0;top:20px;
+                z-index: 910;
+                border:1px solid $fc2; border-radius: 5px;
+                a {font-size:0.84rem;}
+            }
+            li {margin-right:20px; padding-bottom:50px;
+                a {
+                    span {
+                        font-size:0.85rem;
+                        position:absolute;
+                        right:120px;top:20px;
+                        border:1px solid red;
+                        border-radius:10px;
+                        padding:5px 15px;
+                    }//e:span
+                }
+                img {width:100%;}
+                .lang {
+                    a {
+                        span {}//e:span
+                    }
+                }//e:lang
+            }//e:.top ul li
+        }//e:.top.ul
+        .all_nav {
+            a {}
+            .close {}//e:close
+        }//e:all_nav
+        .btm {
+            ul {background: lemonchiffon;
+                li {
+                    a {}
+                    ul {
+                        li {
+                            a {}//e:btm ul li ul li 
+                        }
+                    }//e:btm ul li ul
+                }//e:btm.ul li
+            }//e:btm.ul
+        }//e:btm
+    }//e:top
+}//e:header
+
+
+
+
+//썜이 하신거랑 비굫가ㅣ
+// .bt, {
+//     nav {
+//         > ul {@include flex-center;
+//             > li {position:relative;
+//                 > a{padding:15px;
+//                     display:block; font-weight: 700;
+//                 }
+//                 >a:hover {color:$border;}
+//                     display:block; background: $background;
+//                     position:absolute; width:100%;z-index: 900;
+//                     border:1px solid $fc2;
+//                     li {a {padding:10px; display: block;}}
+//                 }
+//             }
+//         }
+//     }
+// }

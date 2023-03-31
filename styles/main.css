@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* 테두리색 */
+/* 글자색 */
+/* 글자색2 */
+/* 배경색 */
+/* best */
+/* 주문 */
+#popup a {
+  display: block;
+  background-color: #eee;
+  width: 100%;
+  height: 40px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 40px;
+}
+
+header {
+  width: 1200px;
+  margin: 0 auto;
+}
+header .top h1 {
+  padding-top: 30px;
+}
+header .top h1 a {
+  margin: 0 auto;
+  width: 150px;
+  display: block;
+}
+header .top h1 a img {
+  width: 100%;
+}
+header .top .right {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+}
+header .top .right li:first-child {
+  position: relative;
+}
+header .top .right li:first-child > a::after {
+  content: "";
+  display: inline-block;
+  background: teal url(../image/arr.png) no-repeat;
+  width: 10px;
+  height: 10px;
+  margin-left: 7px;
+}
+header .top .right .lang {
+  display: block;
+  padding: 5px;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  z-index: 910;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+header .top .right .lang a {
+  font-size: 0.84rem;
+}
+header .top .right li {
+  margin-right: 20px;
+  padding-bottom: 50px;
+}
+header .top .right li a span {
+  font-size: 0.85rem;
+  position: absolute;
+  right: 120px;
+  top: 20px;
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+header .top .right li img {
+  width: 100%;
+}
+header .top .btm ul {
+  background: lemonchiffon;
+}/*# sourceMappingURL=main.css.map */
