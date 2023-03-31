@@ -76,6 +76,17 @@ header {width:1200px; margin:0 auto;
             }//e:.top ul li
         }//e:.top.ul
         .all_nav {
+            display: block; background: $background;
+            border: 1px solid $fc2; border-radius: 10px;
+            position: fixed;left: 50%;top: 50%;
+            width: 700px; height: 500px; z-index: 999;
+            transform: translate(-50%, -50%);
+            text-align: center;line-height: 500px;
+        }
+        // .all_nav:hover {
+        //     display:none;
+        // }
+        .all_nav {
             a {}
             .close {}//e:close
         }//e:all_nav

@@ -78,6 +78,21 @@ header .top .right li a span {
 header .top .right li img {
   width: 100%;
 }
+header .top .all_nav {
+  display: block;
+  background: #eee;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 700px;
+  height: 500px;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 500px;
+}
 header .top .btm ul {
   background: lemonchiffon;
 }/*# sourceMappingURL=main.css.map */
