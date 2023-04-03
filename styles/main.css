@@ -1,98 +1,156 @@
-@charset "UTF-8";
-/* 테두리색 */
-/* 글자색 */
-/* 글자색2 */
-/* 배경색 */
-/* best */
-/* 주문 */
-#popup a {
-  display: block;
+/* .link,.lang, .all_nav, .sub {display: none;} */
+#popup {
   background-color: #eee;
-  width: 100%;
-  height: 40px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  padding: 10px;
   text-align: center;
-  line-height: 40px;
+}
+#popup a {
+  color: #222;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 header {
-  width: 1200px;
+  text-align: center;
   margin: 0 auto;
 }
-header .top h1 {
-  padding-top: 30px;
+header .headerTop {
+  position: relative;
 }
-header .top h1 a {
-  margin: 0 auto;
-  width: 150px;
-  display: block;
+header .headerTop h1 {
+  padding: 50px 0;
 }
-header .top h1 a img {
-  width: 100%;
-}
-header .top .right {
+header .headerTop .right {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: right;
   align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+}
+header .headerTop .right li:first-child {
   position: relative;
 }
-header .top .right li:first-child {
-  position: relative;
-}
-header .top .right li:first-child > a::after {
+header .headerTop .right li:first-child > a::after {
+  background: url(../image/arr.png) no-repeat;
   content: "";
   display: inline-block;
-  background: teal url(../image/arr.png) no-repeat;
   width: 10px;
   height: 10px;
   margin-left: 7px;
 }
-header .top .right .lang {
+header .headerTop .right li:first-child .lang {
   display: block;
-  padding: 5px;
+  background: #fff;
   position: absolute;
-  left: 0;
-  top: 20px;
   z-index: 910;
   border: 1px solid #aaa;
-  border-radius: 5px;
+  left: -50%;
 }
-header .top .right .lang a {
+header .headerTop .right li:first-child .lang a {
   font-size: 0.84rem;
+  text-align: left;
 }
-header .top .right li {
-  margin-right: 20px;
-  padding-bottom: 50px;
-}
-header .top .right li a span {
-  font-size: 0.85rem;
-  position: absolute;
-  right: 120px;
-  top: 20px;
-  border: 1px solid red;
-  border-radius: 10px;
-  padding: 5px 15px;
-}
-header .top .right li img {
-  width: 100%;
-}
-header .top .all_nav {
+header .headerTop .right li a {
+  text-transform: uppercase;
+  padding: 10px 7px;
   display: block;
-  background: #eee;
+  position: relative;
+}
+header .headerTop .right li a span {
+  font-size: 0.84rem;
+  border: 1px solid #ff7f50;
+  border-radius: 10px;
+  padding: 3px 10px;
+  position: absolute;
+  left: -50%;
+  top: 30px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+header .headerTop .all_nav {
+  display: block;
+  background: #fff;
   border: 1px solid #aaa;
   border-radius: 10px;
   position: fixed;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -49%);
   width: 700px;
   height: 500px;
   z-index: 999;
-  transform: translate(-50%, -50%);
   text-align: center;
   line-height: 500px;
 }
-header .top .btm ul {
+header .headerBottom { /* background-color: brown; */ }
+header .headerBottom nav {
+  width: 1200px;
+  margin: 20px auto;
   background: lemonchiffon;
+}
+header .headerBottom nav > ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+header .headerBottom nav > ul > li {
+  position: relative;
+}
+header .headerBottom nav > ul > li > a {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 15px;
+  display: block;
+}
+header .headerBottom nav > ul > li > a:hover {
+  color: #ff7f50;
+}
+header .headerBottom nav > ul > li .sub {
+  border: 1px solid #aaa;
+  background: #fff;
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 900;
+  text-align: le;
+}
+header .headerBottom nav > ul > li .sub li a {
+  padding: 10px;
+  display: block;
+  font-size: 0.75rem;
+}
+
+main #right_popup {
+  background: #fff;
+  width: 30px;
+  border: 1px solid black;
+}
+main #right_popup #popup_btn a img {
+  width: 100%;
+}
+main #right_popup .contents {
+  background: #fff;
+  width: 500px;
+  border: 1px solid black;
+}
+main #right_popup .contents .info {
+  margin: 0 auto;
+  padding: 30px 150px;
+}
+main #right_popup .contents .info img {
+  width: 100%;
+}
+main #right_popup .contents .info_contents {
+  text-align: center;
+  color: #aaa;
+  line-height: 1.5rem;
+  padding-bottom: 50px;
+  font-weight: 600;
+}
+main #right_popup .contents h2 + p img {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

@@ -1,128 +1,135 @@
-// #ff7f50(테두리색) #222(글자색) #eee (배경색) #ffe4c4(best) #000080(주문) #aaa (글자색2)
-// 변수지정
-$border:#ff7f50;/* 테두리색 */
-$fc1:#222;/* 글자색 */
-$fc2:#aaa;/* 글자색2 */
-$background:#eee; /* 배경색 */
-$best:#ffe4c4;/* best */
-$sell:#000080;/* 주문 */
-//mixin
+//변수 지정
+$wh:#fff;
+$borderColor:#ff7f50;
+$txt1Color:#222;
+$bgColor:#eee;
+$bestColor:#ffe4c4;
+$orderColor:#000080;
+$txt2Color:#aaa;
+//-------------------mixin
 @mixin flex-center {
-    display:flex;
-    flex-flow:row nowrap;
-    align-items: center;
-    justify-content: center;
+    display: flex; flex-flow: row nowrap;
+    align-items: center; justify-content: center;
 }
-//-------------------------------------------------------------
-//skip
-// .lang, .all_nav, .sub {display:none;}
+//-----------------------
+//--------------------skip
+/* .link,.lang, .all_nav, .sub {display: none;} */
+//design
+#popup {
+    background-color:$bgColor ;
+    padding: 10px; text-align: center; 
+    a {
+    color: $txt1Color;
+    font-size: 0.75rem; font-weight: 600;
+    }
 
-#popup a {
-    display: block;
-    background-color: $background;
-    width:100%; height: 40px;
-    font-size:0.85rem; font-weight: 700;
-    text-align: center; line-height: 40px;
 }
-header {width:1200px; margin:0 auto;
-    .top {
-        h1 {padding-top:30px;
-            a {margin:0 auto; 
-                width:150px;
-                display:block;
-                img {width: 100%;}
-            }//e:h1-a
-        }//e:h1
+header {text-align: center; margin: 0 auto;
+    .headerTop { position: relative;
+        h1 {padding:50px 0;
+            a {img {}}
+        }
         .right {
-            // background: lightblue;
-            display:flex;
-            flex-flow:row nowrap;
-            justify-content: right;
-            align-items: center;
-            position:relative;
-            li:first-child {position:relative;
+            @include flex-center;
+            position: absolute; bottom: 15px; right: 0;
+            li:first-child {position: relative;
                 > a::after{
-                content: ''; display: inline-block;
-                background: teal url(../image/arr.png) no-repeat;
-                width:10px;height: 10px;margin-left: 7px;
+                    background: url(../image/arr.png) no-repeat;
+                    content: ''; display: inline-block; width: 10px; height: 10px;
+                    margin-left: 7px;
+                }
+                .lang {
+                    display: block; background: #fff;
+                    position: absolute; z-index: 910;
+                    border: 1px solid $txt2Color; left: -50%;
+                    a {font-size: 0.84rem; text-align: left;}
                 }
             }
-            .lang {display:block;
-                // background: yellow;
-                padding:5px;
-                position:absolute;
-                left:0;top:20px;
-                z-index: 910;
-                border:1px solid $fc2; border-radius: 5px;
-                a {font-size:0.84rem;}
-            }
-            li {margin-right:20px; padding-bottom:50px;
-                a {
+            li {  
+                a {text-transform: uppercase;
+                    padding: 10px 7px; display: block;
+                    position: relative;
                     span {
-                        font-size:0.85rem;
-                        position:absolute;
-                        right:120px;top:20px;
-                        border:1px solid red;
-                        border-radius:10px;
-                        padding:5px 15px;
-                    }//e:span
+                        font-size: 0.84rem;
+                        border: 1px solid $borderColor; border-radius: 10px;
+                        padding: 3px 10px;
+                        position: absolute; left: -50%; top: 30px;
+                        width: max-content;
+                        
+                    }
                 }
-                img {width:100%;}
                 .lang {
                     a {
-                        span {}//e:span
                     }
-                }//e:lang
-            }//e:.top ul li
-        }//e:.top.ul
-        .all_nav {
-            display: block; background: $background;
-            border: 1px solid $fc2; border-radius: 10px;
-            position: fixed;left: 50%;top: 50%;
-            width: 700px; height: 500px; z-index: 999;
-            transform: translate(-50%, -50%);
-            text-align: center;line-height: 500px;
+                }
+                
+            }
         }
-        // .all_nav:hover {
-        //     display:none;
-        // }
         .all_nav {
-            a {}
-            .close {}//e:close
-        }//e:all_nav
-        .btm {
-            ul {background: lemonchiffon;
-                li {
-                    a {}
-                    ul {
+            display: block; background:$wh; border: 1px solid $txt2Color;
+            border-radius: 10px;
+            position: fixed; left: 50%; top: 50%; transform: translate(-50%,-49%);
+            width: 700px; height:500px; z-index: 999;
+            text-align: center; line-height: 500px;
+        }
+    }
+    .headerBottom {/* background-color: brown; */ 
+        nav {width: 1200px; margin: 20px auto;
+            background: lemonchiffon;
+            > ul {
+                @include flex-center;
+                > li {position:relative;
+                    > a {
+                        font-size: 0.75rem; text-transform: uppercase;
+                        padding: 15px; display: block;
+                    }
+                    > a:hover {color: $borderColor;}
+                    .sub {border: 1px solid $txt2Color; background: $wh;
+                        display: block; position:absolute; width: 100%; 
+                        z-index: 900; text-align: le;
                         li {
-                            a {}//e:btm ul li ul li 
+                            a{
+                                padding: 10px; display: block;
+                                font-size: 0.75rem;
+                            }
                         }
-                    }//e:btm ul li ul
-                }//e:btm.ul li
-            }//e:btm.ul
-        }//e:btm
-    }//e:top
-}//e:header
-
-
-
-
-//썜이 하신거랑 비굫가ㅣ
-// .bt, {
-//     nav {
-//         > ul {@include flex-center;
-//             > li {position:relative;
-//                 > a{padding:15px;
-//                     display:block; font-weight: 700;
-//                 }
-//                 >a:hover {color:$border;}
-//                     display:block; background: $background;
-//                     position:absolute; width:100%;z-index: 900;
-//                     border:1px solid $fc2;
-//                     li {a {padding:10px; display: block;}}
-//                 }
-//             }
-//         }
-//     }
-// }
+                    }
+                }
+            }
+        }
+    }
+}//header END -------------------------------------------------
+//main--------------------------------------------------------
+main {
+    #right_popup { background: #fff; width:30px; border: 1px solid black;
+        #popup_btn {
+            a {
+                img {width:100%;}
+            }
+        }//popup_btn
+        .contents {
+            background: #fff; width:500px; border:1px solid black;
+            .info {margin:0 auto;
+                padding:30px 150px;
+                img{width:100%;}
+            }//info
+            .info_contents {
+                text-align: center;
+                color:$txt2Color; line-height: 1.5rem;
+                padding-bottom:50px; font-weight: 600;
+            }//info_contents
+            .user {
+                a {
+                    span {}
+                }//user a 
+            }//e:user
+            .board {
+                a{}
+            }//board
+            h2 {}//h2
+            h2+p {img{width:100%;}}//h2+p
+            address {}//address
+            address+p {}//address+p
+        }//contents
+    }//right_popup
+}//main
